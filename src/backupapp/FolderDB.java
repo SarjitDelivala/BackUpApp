@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 /**
  *
@@ -27,27 +29,23 @@ public class FolderDB {
     ObjectInputStream readFolders;
     ObjectOutputStream writeFolders;
     
+    public void display()
+    {
+        Set<String> src = folders.keySet();
+        
+        for (Iterator<String> iterator = src.iterator(); iterator.hasNext();) {
+            String next = iterator.next();
+            System.out.println(next);
+        }
+    }
     
-
     public FolderDB() {
         folders = new HashMap();
         
         
         f = new File("D:\\YourFolderbackup.sarjit");
         
-        if(!f.exists())
-        {
-            try
-            {
-                f.createNewFile();
-                System.out.println("File Created");
-            }
-            catch(IOException e)
-            {
-                e.printStackTrace();
-            }
-        }
-        else
+        if(f.exists())
         {
             try 
             {

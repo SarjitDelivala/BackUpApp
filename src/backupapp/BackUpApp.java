@@ -5,13 +5,6 @@
  */
 package backupapp;
 
-import java.awt.GridLayout;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
 /**
  *
  * @author SARJIT
@@ -27,6 +20,7 @@ public class BackUpApp {
     public static void main(String[] args) {
         
         data = new FolderDB();
+        //data.display();
         data.start();
     }   
     
